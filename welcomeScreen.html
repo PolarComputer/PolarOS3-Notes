@@ -1,0 +1,184 @@
+<style>
+body {
+  background: #25373D;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  overflow: hidden;
+  background: url(assets/moutain-bridge.gif) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.container-main {
+  background-color: white;
+  width: 60% !important;
+  height: 50%;
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  border-radius: 10px;
+  box-shadow: cadetblue;
+  box-shadow: -4px 5px 20px 0px rgba(0, 0, 0, 0.50);
+}
+
+.leftBtn {
+  display: none;
+  border-radius: 100px;
+  background: ghostwhite;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: calc(50% - (400px + 25px));
+  bottom: 50%;
+  z-index: 999;
+  box-shadow: -3px 4px 20px 0px rgba(0, 0, 0, .7);
+}
+
+.leftBtn:hover {
+  box-shadow: -4px 5px 20px 0px rgba(0, 0, 0, .9);
+}
+
+.leftBtn .fa {
+  color: #2a2a2a;
+  font-size: 28px;
+  position: absolute;
+  left: 11px;
+  top: 11px;
+}
+
+.rightBtn {
+  border-radius: 100px;
+  background: ghostwhite;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: calc(50% - (400px + 25px));
+  bottom: 50%;
+  z-index: 999;
+  box-shadow: -2px 3px 20px 0px rgba(0, 0, 0, .3);
+}
+
+.rightBtn:hover {
+  box-shadow: -3px 3px 20px 0px rgba(0, 0, 0, .5);
+}
+
+.rightBtn .fa {
+  color: #2a2a2a;
+  font-size: 28px;
+  position: absolute;
+  right: 11px;
+  top: 11px;
+}
+
+.title {
+  color: #6f6f6f;
+  font-weight: lighter;
+  align-content: center;
+  text-align: center;
+  padding-top: 3%;
+      margin-bottom: 10px;
+}
+
+.text {
+  text-align: center;
+  color: #585858;
+  padding-right: 12%;
+  padding-left: 12%;
+      margin-top: 10px;
+}
+
+hr {
+    border-top: 1px solid rgba(88, 88, 88, .5);
+    width: 10%;
+    margin: 0px;
+    /* height: 2px; */
+    align-content: center;
+    text-align: center;
+}
+
+.btnArea {
+  width: 60%;
+  padding-left: 20%
+}
+
+.btn {
+  border-radius: 5px;
+  padding: 7px 15px;
+  font-size: 15px;
+  border: white;
+  text-decoration: none;
+  margin: 5px;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.btn:hover {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+.blue {
+  background-color: #148ff5;
+  box-shadow: 0px 0px 0px 0px #3C93D5;
+  border: #148ff5 2px solid;
+  font-weight: 500;
+}
+
+.blue:hover {
+  background-color: #148ff5;
+  box-shadow: 0px 0px 0px 0px #3C93D5;
+  border: #148ff5 2px solid;
+  font-weight: 500;
+}
+
+.grey {
+  background-color: white;
+  box-shadow: 0px 0px 0px 0px #6f6f6f;
+  border: #6f6f6f 2px solid;
+  color: #6f6f6f;
+  font-weight: 500;
+}
+
+.grey:hover {
+  background-color: #6f6f6f;
+  box-shadow: 0px 0px 0px 0px #3C93D5;
+  border: #6f6f6f 2px solid;
+  font-weight: 500;
+  color: white;
+}
+
+
+</style>
+
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <title>Welcome to PolarOS Notes</title>
+</head>
+
+<body>
+
+<script>
+function Welcome() {
+  setupExample();
+  window.location = 'index.html';
+}
+</script>
+
+  <div class="container-main">
+    <div class=slide id=welcome>
+      <h1 class=title>Welcome to Notes.</h1>
+      <center><hr></center>
+      <p class=text>Notes is a new PolarOS application built ontop the Electon framework with javascript. The note editor is designed to keep you working and be as creative and productive as possible.</P>
+      <div class=btnArea>
+        <button class="btn blue" style="float: right;" onclick="window.location = 'index.html';">Get Started</button>
+        <button class="btn grey" style="float: lefts;">Learn More</button>
+      </div>
+    </div>
+  </div>
+
+
+</body>

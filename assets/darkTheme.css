@@ -1,0 +1,55 @@
+.ql-toolbar.ql-snow {
+    border: 0px solid #ccc !important;
+    background: #2a2a2a !important;
+    border-bottom: 1px solid #7b7b7b !important;
+}
+
+.ql-toolbar.ql-snow + .ql-container.ql-snow {
+    color: #fff !important;
+    background: #2a2a2a !important;
+}
+
+.ql-container.ql-snow {
+    border: 0px solid #ccc !important;
+}
+
+.ql-snow .ql-stroke {
+    stroke: #7b7b7b;
+}
+
+.ql-snow .ql-fill, .ql-snow .ql-stroke.ql-fill {
+    fill: #7b7b7b;
+}
+
+.ql-snow .ql-picker {
+    color: #7b7b7b;
+}
+
+.ql-editor.ql-blank::before {
+    color: #7b7b7b !important;
+}
+
+
+/*Side Bar CSS Dark*/
+.titleSection hr {
+  color: rgba(255, 255, 255, 0.5) !important;
+  opacity: .3;
+  margin-top: 5px;
+  margin-bottom: 6px;
+}
+
+.hideSideBarCSS {
+  background: #2a2a2a !important;
+}
+
+.showSideBarCSS {
+  background: #2a2a2a !important;
+}
+
+.fa {
+  color: #fff !important;
+}
+
+#sideBar #title {
+  color: #fff !important;
+}

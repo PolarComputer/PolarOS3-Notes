@@ -1,0 +1,120 @@
+<style>
+body {
+  background: #25373D;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  overflow: hidden;
+}
+
+.container-main {
+  background-color: white;
+  width: 60% !important;
+  height: 50%;
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  border-radius: 10px;
+  box-shadow: cadetblue;
+  box-shadow: -4px 5px 20px 0px rgba(0, 0, 0, 0.50);
+}
+
+.leftBtn {
+  display: none;
+  border-radius: 100px;
+  background: ghostwhite;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: calc(50% - (400px + 25px));
+  bottom: 50%;
+  z-index: 999;
+  box-shadow: -3px 4px 20px 0px rgba(0, 0, 0, .7);
+}
+
+.leftBtn:hover {
+  box-shadow: -4px 5px 20px 0px rgba(0, 0, 0, .9);
+}
+
+.leftBtn .fa {
+  color: #2a2a2a;
+  font-size: 28px;
+  position: absolute;
+  left: 11px;
+  top: 11px;
+}
+
+.rightBtn {
+  border-radius: 100px;
+  background: ghostwhite;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  right: calc(50% - (400px + 25px));
+  bottom: 50%;
+  z-index: 999;
+  box-shadow: -2px 3px 20px 0px rgba(0, 0, 0, .3);
+}
+
+.rightBtn:hover {
+  box-shadow: -3px 3px 20px 0px rgba(0, 0, 0, .5);
+}
+
+.rightBtn .fa {
+  color: #2a2a2a;
+  font-size: 28px;
+  position: absolute;
+  right: 11px;
+  top: 11px;
+}
+
+.title {
+  color: #6f6f6f;
+  font-weight: lighter;
+  align-content: center;
+  text-align: center;
+  padding-top: 3%;
+      margin-bottom: 10px;
+}
+
+.text {
+  text-align: center;
+  color: #585858;
+  padding-right: 12%;
+  padding-left: 12%;
+      margin-top: 10px;
+}
+
+hr {
+    border-top: 1px solid rgba(88, 88, 88, .5);
+    width: 10%;
+    margin: 0px;
+    /* height: 2px; */
+    align-content: center;
+    text-align: center;
+}
+
+</style>
+
+<head>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class=leftBtn>
+    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+  </div>
+
+  <div class="container-main">
+    <div class=slide id=welcome>
+      <h1 class=title>Welcome to Notes.</h1>
+      <center><hr></center>
+      <p class=text>Notes is a new PolarOS application built ontop the Electon framework with javascript. The note editor is designed to keep you working and be as creative and productive as possible.</P>
+    </div>
+  </div>
+
+  <div class=rightBtn>
+    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+  </div>
+
+</body>

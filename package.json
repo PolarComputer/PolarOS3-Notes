@@ -1,0 +1,36 @@
+{
+  "name": "PolarOS-Notes",
+  "version": "1.0.0",
+  "productName": "PolarOS Notes",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "devDependencies": {
+    "electron": "^1.4.3",
+    "electron-packager": "^8.1.0"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "~1.7.8"
+  },
+  "scripts": {
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . PolarOS-Notes --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icon.ico --prune=true --out=release-builds --version-string.CompanyName='Polar Computers Inc.' --version-string.FileDescription=CE --version-string.ProductName='PolarOS Notes'",
+    "package-linux": "electron-packager . PolarOS-Notes --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icon.png --prune=true --out=release-builds",
+    "pack:win": "electron-packager . PolarOS-Notes --asar --prune --platform=win32 --arch=ia32 --version=0.33.0 --icon=assets/icon.ico --out=build"
+  },
+  "dependencies": {
+    "electron-vibrancy": "^0.1.3"
+  }
+}
