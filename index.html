@@ -1,0 +1,563 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Notes - New Note</title>
+    <link href="assets/index.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css'>
+    <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css'>
+    <link rel='stylesheet prefetch' href='http://cdn.quilljs.com/1.3.4/quill.bubble.css'>
+    <link rel='stylesheet prefetch' href='http://cdn.quilljs.com/1.3.4/quill.snow.css'>
+  </head>
+
+
+  <script>
+  function updateTitlePage() {
+    document.getElementById('titlePage').innerHTML = document.title;
+  }
+  </script>
+  <div id="electron-titlebar" style="width: 100%;">
+      <div style="width: 100%; height: 100%; text-align: center; line-height: 22px; color: white; font-size: 13px;" id=titlePage>Title</div>
+  </div>
+
+  <body>
+
+    <div class='newNotePage' id=newNotePageId>
+      <div class=newNotePadding>
+        <i class="fa fa-times closeBtn" onclick="newNote(false)" aria-hidden="true" ></i>
+      </div>
+      <input autofocus="autofocus" type="text" id=newNoteName placeholder="Something Creative..."/>
+      <!-- <h2 class=addNoteEnter>Press enter to add note.</h2> -->
+    </div>
+
+
+    <div class='metaDateNote' id=metaDateNoteId>
+      <div class=metaDateNotePadding>
+        <input class="title">Settings</input>
+        <i class="fa fa-times closeBtn" onclick="metaTagsMenu(false)" aria-hidden="true" ></i>
+        <hr>
+      </div>
+      <div class=contentPage>
+        <p class=subTitle>Title</p>
+        <input type="text" id=metaDateNameInput placeholder="Something Creative..."/>
+      </div>
+      <!-- <h2 class=addNoteEnter>Press enter to add note.</h2> -->
+    </div>
+
+
+    <div class='settingPage' id=settingPageID>
+      <div class=settingPadding>
+        <p class="title">Settings</p>
+        <i class="fa fa-times closeBtn" onclick="settingMenuClose()" aria-hidden="true" ></i>
+        <hr>
+
+        <div class="left settings">
+          <container class=settings>
+            <p class="subTitle">Night Mode</p>
+            <switch>
+              <input onclick="updateSettings();" type="checkbox" id="switch" />
+              <label for="switch"></label>
+              <i class="fa fa-check" aria-hidden="true" ></i>
+              <i class="fa fa-times" aria-hidden="true" ></i>
+            </switch>
+            <p class="explincation">Have a late night? Enable night mode for an eye saving dark theme acrossed all of your note editor. Stay up just a little later and finish that essay.</p>
+          </container>
+
+          <hr class=tools>
+
+          <container class=settings>
+            <p class="subTitle">Auto Save</p>
+            <switch>
+              <input onclick="updateSettings();" type="checkbox" id="switch2" checked />
+              <label for="switch2"></label>
+              <i class="fa fa-check" aria-hidden="true" ></i>
+              <i class="fa fa-times" aria-hidden="true" ></i>
+            </switch>
+            <p class="explincation">Not active Setting!!! Have a late night? Enable night mode for an eye saving dark theme acrossed all of your note editor. Stay up just a little later and finish that essay.</p>
+          </container>
+
+          <hr class=tools>
+
+          <container class=settings>
+            <p class="subTitle">Background</p>
+            <bgSelector>
+              <div class="background grey"></div>
+              <div class="background blue"></div>
+              <div class="background ice"></div>
+              <div class="background moving"></div>
+            </bgSelector>
+            <p class="explincation" id=backgroundExp>Have a late night? Enable night mode for an eye saving dark theme acrossed all of your note editor. Stay up just a little later and finish that essay.</p>
+          </container>
+
+          <hr class=tools>
+          <p class="subTitleInfo">Introduction</p>
+          <i class="fa fa-chevron-right arrow" aria-hidden="true"></i>
+
+          <hr class=tools>
+          <p class="subTitleInfo">Help Page</p>
+          <i class="fa fa-chevron-right arrow" aria-hidden="true"></i>
+
+          <hr class=tools>
+          <p class="subTitleInfo">Polar Summit Account</p>
+          <i class="fa fa-chevron-right arrow" aria-hidden="true"></i>
+          <hr class=tools>
+
+        </div>
+
+        <div class="right settings">
+
+          <container class=settings>
+            <p class="subTitle">Standard Text Option</p>
+            <switch style="margin-top: 0%;">
+              <input onclick="updateSettings();" type="checkbox" id="switch3"/>
+              <label for="switch3"></label>
+              <i class="fa fa-check" aria-hidden="true" ></i>
+              <i class="fa fa-times" aria-hidden="true" ></i>
+            </switch>
+            <p class="explincation" style="margin-top: -3% !important;">You can still use the <i class=cmd>⌘ + b</i> to get bold, <i class=cmd>⌘ + u</i> to get underlined, and <i class=cmd>⌘ + i</i> to get italics. It just removes these items from your tool bar, to make it even sleaker.</p>
+          </container>
+
+          <hr class=tools>
+
+          <container class=settings>
+            <p class="title">Quotes</p>
+            <switch>
+              <input onclick="updateSettings();" type="checkbox" id="switch4" />
+              <label for="switch4"></label>
+              <i class="fa fa-check" aria-hidden="true" ></i>
+              <i class="fa fa-times" aria-hidden="true" ></i>
+            </switch>
+          </container>
+
+          <hr class=tools>
+
+          <container class=settings>
+            <p class="title">Code Box</p>
+            <switch>
+              <input onclick="updateSettings();" type="checkbox" id="switch5" />
+              <label for="switch5"></label>
+              <i class="fa fa-check" aria-hidden="true" ></i>
+              <i class="fa fa-times" aria-hidden="true" ></i>
+            </switch>
+          </container>
+
+          <hr class=tools>
+
+          <container class=settings>
+            <p class="title">List and Bullets</p>
+            <switch>
+              <input onclick="updateSettings();" type="checkbox" id="switch6"/>
+              <label for="switch6"></label>
+              <i class="fa fa-check" aria-hidden="true" ></i>
+              <i class="fa fa-times" aria-hidden="true" ></i>
+            </switch>
+          </container>
+
+          <hr class=tools>
+
+          <container class=settings>
+            <p class="title">Sub & Super Script </p>
+            <switch>
+              <input onclick="updateSettings();" type="checkbox" id="switch7" />
+              <label for="switch7"></label>
+              <i class="fa fa-check" aria-hidden="true" ></i>
+              <i class="fa fa-times" aria-hidden="true" ></i>
+            </switch>
+          </container>
+
+          <hr class=tools>
+
+          <container class=settings>
+            <p class="title">Image</p>
+            <switch>
+              <input onclick="updateSettings();" type="checkbox" id="switch8"/>
+              <label for="switch8"></label>
+              <i class="fa fa-check" aria-hidden="true" ></i>
+              <i class="fa fa-times" aria-hidden="true" ></i>
+            </switch>
+          </container>
+
+          <hr class=tools>
+
+          <container class=settings>
+            <p class="title">Link</p>
+            <switch>
+              <input onclick="updateSettings();" type="checkbox" id="switch9"/>
+              <label for="switch9"></label>
+              <i class="fa fa-check" aria-hidden="true" ></i>
+              <i class="fa fa-times" aria-hidden="true" ></i>
+            </switch>
+          </container>
+
+          <hr class=tools>
+
+          <container class=settings>
+            <p class="title">Clear Format</p>
+            <switch>
+              <input onclick="updateSettings();" type="checkbox" id="switch10" />
+              <label for="switch10"></label>
+              <i class="fa fa-check" aria-hidden="true" ></i>
+              <i class="fa fa-times" aria-hidden="true" ></i>
+            </switch>
+          </container>
+
+          <hr class=tools>
+
+          <p class="explincation">Disableing these items above will just remove it from the tool bar. But, those formats will not be removed from your notes.</p>
+
+
+        </div>
+
+      </div>
+    </div>
+
+<div id=bodySystem class="blurOverlay">
+    <!--<div class=header>
+      <input name="" class=headerBtn type="button" onclick="updateExpandPosition()"> Expand</input>
+    </div>-->
+
+    <script type="text/javascript">
+
+
+
+//     var quill = new Quill('#editor-container', {
+//   modules: {
+//     toolbar: [
+//       [{ header: [1, 2, false] }],
+//       ['bold', 'italic', 'underline'],
+//       ['image', 'code-block']
+//     ]
+//   },
+//   placeholder: 'Compose an epic...',
+//   theme: 'snow'  // or 'bubble'
+// });
+
+
+
+//Hover over unexpanded
+ // $('.radio').on('mouseover mouseout', 'div[type="radio"]', function(){
+ //     $(this).siblings().toggleClass('hover');
+ // });
+ //
+ // .radio div[type='radio'].hover {
+ //     opacity: 0.5;
+ // }
+
+
+
+    function changeBottomMessage() {
+      document.getElementById("bottomMessage1").style.display = 'block';
+    }
+
+    var expanded = true;
+    //open means full screen
+
+    function blurOverlay(boolean) {
+      if (boolean == true) {
+        document.getElementById('bodySystem').className ='blurOverlay';
+      } else {
+        document.getElementById('bodySystem').className ='bodySystemClass';
+      }
+    }
+
+    // Runs Commands From Main.js
+    require('electron').ipcRenderer.on('function', (event, functionCmd) => {
+      eval(functionCmd);
+    })
+
+    function settingMenuClose() {
+      document.getElementById("settingPageID").style.display = 'none';
+      setTimeout(function(){
+        location.reload();
+        blurOverlay(false);
+      },  50);
+    }
+
+    function newNote(open) {
+      if (open == false) {
+        blurOverlay(false);
+        document.getElementById("newNotePageId").style.display = 'none';
+      } else {
+        blurOverlay(true);
+        document.getElementById("newNotePageId").style.display = 'block';
+        document.getElementById("newNoteName").focus();
+      }
+    }
+
+    function metaTagsMenu(open) {
+      if (open == false) {
+        blurOverlay(false);
+        document.getElementById("metaDateNoteId").style.display = 'none';
+      } else {
+        blurOverlay(true);
+        document.getElementById("metaDateNoteId").style.display = 'block';
+        //document.getElementById("metaDateNote").focus();
+      }
+    }
+
+
+
+    function settingMenuOpen() {
+      blurOverlay(true);
+      setToggleBtn();
+      //document.getElementById('settingPageID').classList.remove = 'hide';
+      setTimeout(function(){
+        document.getElementById("settingPageID").style.display = 'block';
+      },  50);
+    }
+
+    function escAnyMenu() {
+      settingMenuClose();
+      newNote(false);
+    }
+
+
+    function updateExpandPosition(){
+      if ( expanded == false) {
+        expand();
+      } else {
+        unexpand();
+      }
+      console.log(expanded);
+    }
+
+    function expand() {
+      expanded = false;
+      quill.enable(false);
+      document.getElementById('img').className ='miniEditor';
+      // document.getElementById('img').className ='miniEditor:hover';
+      document.getElementById('sideBar').classList.remove ='hideSideBarCSS';
+      document.getElementById('sideBar').className ='showSideBarCSS';
+      //img.onclick = unexpandCheck;
+      openListNotes();
+      console.log(expanded);
+    }
+
+
+    // Adds the notes to the side bar of the program
+    function openListNotes() {
+      document.getElementById('NotesInsert').innerHTML = "";
+      var transaction = db.transaction(["notes"]);
+      var objectStore = transaction.objectStore("notes");
+      var request = objectStore.get("list");
+      request.onsuccess = function(event) {
+        console.log(request.result.editedLast);
+        console.log(request.result.editedLast.length);
+        for ( var i = 0; i <= (request.result.editedLast.length + 1); i++) {
+          gatherInfo(i, function(i) {
+            // console.log(i.title);
+            // console.log(i);
+            checkData(i, function(i) {
+              insertData(i);
+            });
+          });
+        }
+      };
+    }
+    //
+    function gatherInfo(i,callback) {
+      var transaction2 = db.transaction(["notes"]);
+      var objectStore2 = transaction2.objectStore("notes");
+      var requestNote = objectStore2.get(i);
+      requestNote.onsuccess = function(event) {
+        callback(requestNote.result);
+      };
+    }
+
+
+    function checkData(i, callback) {
+      console.log(i);
+      if (i && i.title) {
+        console.log(true);
+        callback(i)
+      } else {
+        console.log(false);
+        callback(i)
+        return false;
+      }
+    }
+
+    function insertData (i) {
+      console.log("Inserting");
+      var current = document.getElementById('NotesInsert').innerHTML;
+      var inject = "<div class=content onclick=openNote(" + i.id + ")><div class=titleNote>" + i.title + "</div><hr class=spacer><div class=textNote>" + i.shortHand + "</div></div>";
+      document.getElementById('NotesInsert').innerHTML = inject + current;
+      //console.log(i);
+    }
+
+
+    // IS FOR OPEN AND CLOSING THE SIDE BAR
+    function unexpand() {
+      quill.enable(true);
+      document.getElementById("editor-container").blur();
+      expanded = true;
+      document.getElementById('sideBar').classList.remove ='showSideBarCSS';
+      document.getElementById('sideBar').className ='hideSideBarCSS';
+      document.getElementById('img').className ='classname2';
+      //document.getElementById('img').classList.remove ='classname2';
+      // document.getElementById('editor-container').className = 'hoverOpacity;';
+      document.getElementById('img').classList.remove ='miniEditor';
+      console.log(expanded);
+    }
+
+    function invertExpand() {
+      if (expanded == false) {
+        unexpand();
+      } else {
+        expand();
+      }
+    }
+
+    function unexpandCheck() {
+      if (expanded == true) {
+        unexpand();
+      }
+    }
+
+    function expandWhenNot() {
+      console.log("hello");
+      if (expanded == false) {
+        unexpand();
+      } else {
+        console.log("cant");
+      }
+    }
+    </script>
+
+
+
+    <div class=settingsArea onclick="settingMenuOpen()">
+      <i class="fa fa-cog settingBtn" onclick="settingMenuOpen()" style="color: #fff" aria-hidden="true"></i>
+    </div>
+
+
+    <div class=sideBar id=sideBar>
+      <div id=padding>
+        <div class=titleSection>
+          <div id=closeBtn>
+            <i class="fa fa-times hoverBlue" onclick="unexpand()" aria-hidden="true" ></i>
+          </div>
+
+          <div id=title style="display: block">Note Books</div>
+          <div id=title style="display: none">Settings</div>
+          <div id=title style="display: none">Web Clips</div>
+          <hr id=title>
+        </div>
+        <div class=container id=notes>
+          <div class=content id=addCard onclick=newNote()>
+            <i class="fa fa-plus addBtnPlusCircle" aria-hidden="true"></i>
+            <div class=addBtnText>Add New Note</div>
+          </div>
+          <div id=NotesInsert>
+            <!-- Insert Current Notes Here -->
+          </div>
+          <div id=messageBox>
+            <!--<div class=ending id=bottomMessage1 style="display: none;">Whip up something new. Like a [Insert Random Thing here].<br><i class="fa fa-flask footerMessage" aria-hidden="true"></i></div>
+            <div class=ending id=bottomMessage2 style="display: none;">Don't get weighed down, make something awesome!<br><i class="fa fa-anchor footerMessage" aria-hidden="true"></i></div>
+            <div class=ending id=bottomMessage3 style="display: none;">Whip up something new. Like a [Insert Random Thing here].<br><i class="fa fa-flask footerMessage" aria-hidden="true"></i></div>-->
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class=browserWindow id=img>
+      <div id=editor2 class=editor >
+          <div id="toolbar">
+
+          </div>
+          <div class=writeArea>
+            <div id="editor-container" onclick="expandWhenNot();"></div>
+
+            <div class=bottom>
+              <p id=time class=leftTime>Document Note Saved<p>
+              <div class=right onclick="metaTagsMenu(true)">
+                <!-- <div id=text-O-count>
+                  <p id=wordCount>words: 0&nbsp; &nbsp; &nbsp;characters: 0</p>
+                </div> -->
+              </div>
+            </div>
+
+          </div>
+      </div>
+    </div>
+
+    <script>
+      // Disables Style Sheet
+      //document.styleSheets[0].disabled = true;
+
+      // You can also require other files to run in this process
+      require('./renderer.js')
+    </script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js'></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js'></script>
+    <script src='http://cdn.quilljs.com/1.3.4/quill.js'></script>
+
+    <!--- Message At Bottom --->
+    <script src='assets/javascript/bottomMessage.js'></script>
+    <script>changeBottomMessage();</script>
+
+    <!--- Code extention for Text Editor  --->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+
+    <!--- Electron Config --->
+    <script src='assets/javascript/electron.js'></script>
+
+    <!--- Text Editor Image Drag and Drop --->
+    <script src='assets/javascript/imageResize.min.js'></script>
+
+
+    <!--- Text Editor Image Drag and Drop --->
+    <script src='assets/javascript/imageDrop.min.js'></script>
+
+    <!--- Save Database --->
+    <script src='assets/javascript/saveAndRestore.js'></script>
+
+    <!--- Note List --->
+    <script src='assets/javascript/noteList.js'></script>
+
+    <!--- Note List --->
+    <script src='assets/javascript/settings.js'></script>
+
+    <!--- Text Editor --->
+    <script src='assets/javascript/textEditor.js'></script>
+
+
+
+    <script>blurOverlay(true);</script>
+    <body onload="openLastNote(500);">
+
+<script>
+function startUpForFirstTime() {
+  databaseLength("notes", function(length) {
+    if(length) {
+      console.log(true);
+    } else {
+      console.log("startup");
+    }
+  });
+}
+
+//editor-container.onclick = expandWhenNot;
+
+// var minEditor = document.querySelector('.miniEditor');
+//         minEditor.addEventListener('click', function (event) {
+//             expandWhenNot();
+//         });
+
+    //var customButton = document.querySelector('#custom-button');
+    //  customButton.addEventListener('click', function() {
+    //  console.log('Clicked!');
+    //  expand();
+    //});
+    </script>
+  </div>
+  </body>
+</html>
