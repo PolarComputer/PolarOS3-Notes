@@ -48,7 +48,9 @@ This program will be built on top the Electron framework. With a Chrome headless
 - Node.js
 - electron-vibrancy by arkenthera (Mac transparenty)
 
-
+## What to take a look at
+ - Any files in `assets/javscript`
+ - the `index.html` most of the javascript running the UI is located there.
 
 ## Welcome Note For first Time users
 Welcome to PolarOS3 Notes
