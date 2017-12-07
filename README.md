@@ -24,31 +24,8 @@ This program will be built on top the Electron framework. With a Chrome headless
  - `init()` - creates database for first-time setup
 
 ## Flow
-`
---> Start Program ----|
-                      |
-                     \ /
-  |--  No <-- ?Is first start? --> Yes --> init() --> (welcome screen) ---|
-  |                                                                       |
-  |  <---  <---  <---  <---  <---  <---  <---  <--- <---  <---  <---  <---|
-  |
-  |  <---  <---  <---  <---  <---  <---  <---  <--- <---  <---  <---  <---|
-  |                                                                       |
- \ /                                                                      |
-(open last note) --->  ?Open Side Bar?  --->  ?New Note?  --->   ?settings?
-                              |                   |
-                              \/                  \/
-                        (Generate List)       (open Screen)
-                              |                   |
-                              \/                  \/
-                      (generate Message)    (wait for [enter])
-                              |                    |
-                              \/                   \/
-                    (Wait till click on note)  (get title)
-                              |                   |
-                              \/                  \/
-                         openNote(id)         newNote(title)
-`
+![alt text](assets/Diagram.png "Logo Title Text 1")
+
 
 
 
