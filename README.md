@@ -1,3 +1,58 @@
+# PolarOS Notes
+This program will be built on top the Electron framework. With a Chrome headless browser and Node to interact with the application and website. Most code will be located on one page to be-able to have a blurred glass look. The program will be a flat clean notes application. It will store the data in the browser database, like a cache.
+
+## Function List
+ - `expand()` - opens side bar
+ - `unexpand()` - closes the side bar
+ - `openNote(id)` - opens a note with the id
+ - `updateNote()` - save current open note
+ - `addNote(name)` - adds note to database
+    - `generateID()` - makes an id for a new note
+ - `settingsOpen(boolean)` - opens or closes settings
+ - `addNotePage(boolean)` - open or closes the new menu page
+ - `openListNotes()` - generates the list of saved notes
+    - `gatherInfo(i,callback_)` - get info about a current note in a for loop
+ - `changeBottomMessage()` - adds a clever message at the bottom of the note page
+      - `generateMessage(message)` - makes the html for the message
+      - `grabMessage(list)` - grabs random message from list
+      - `grabItem(list)` - grabs a random item to insert in message
+ - `updatePos(id)` - adds the note id to the end of the array to keep a record of last updated notes
+ - `updateTimeStampPos(id)` - updates the time stamp of the note
+ - `openLastNote(wait)` - opens the last edited note when the application start
+ - `timeStampID()` - makes an array with time info to make sorting by date easy
+ - `timeCalc()` - calculates time of the day so it display AM or PM and isnt in military time.
+ - `init()` - creates database for first-time setup
+
+## Flow
+`
+--> Start Program ----|
+                      |
+                     \ /
+  |--  No <-- ?Is first start? --> Yes --> init() --> (welcome screen) ---|
+  |                                                                       |
+  |  <---  <---  <---  <---  <---  <---  <---  <--- <---  <---  <---  <---|
+  |
+  |  <---  <---  <---  <---  <---  <---  <---  <--- <---  <---  <---  <---|
+  |                                                                       |
+ \ /                                                                      |
+(open last note) --->  ?Open Side Bar?  --->  ?New Note?  --->   ?settings?
+                              |                   |
+                              \/                  \/
+                        (Generate List)       (open Screen)
+                              |                   |
+                              \/                  \/
+                      (generate Message)    (wait for [enter])
+                              |                    |
+                              \/                   \/
+                    (Wait till click on note)  (get title)
+                              |                   |
+                              \/                  \/
+                         openNote(id)         newNote(title)
+``
+
+
+
+## Welcome Note For first Time users
 Welcome to PolarOS3 Notes
 PolarOS notes is a note program with many capibilites. It can take basic notes and include picture. You can add code to your notes or quote block. Below we will teach you verything you need to know. Inculding keoard shorcuts, icons and how to use each feature.
 
