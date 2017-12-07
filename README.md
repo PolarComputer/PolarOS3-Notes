@@ -48,7 +48,7 @@ This program will be built on top the Electron framework. With a Chrome headless
                               |                   |
                               \/                  \/
                          openNote(id)         newNote(title)
-``
+`
 
 
 
