@@ -24,7 +24,7 @@ This program will be built on top the Electron framework. With a Chrome headless
  - `init()` - creates database for first-time setup
 
 ## Flow
-![alt text](assets/Diagram.png "Logo Title Text 1")
+![alt text](/assets/Diagram.png?raw=true "Logo Title Text 1")
 
 
 
