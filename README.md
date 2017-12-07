@@ -41,6 +41,12 @@ This program will be built on top the Electron framework. With a Chrome headless
   - jQuery-Suggester by kensnyder
 - CSS toggle switch by Marcus Burnette (I did a lot of editing)
 - Month and Day organiser by w3schools.com
+- Chrome Framework by Google
+- Electron Framework by Atom
+- IndexedDB by Mozilla (storage)
+- electron-compilers (compiling it)
+- Node.js
+- electron-vibrancy by arkenthera (Mac transparenty)
 
 
 
