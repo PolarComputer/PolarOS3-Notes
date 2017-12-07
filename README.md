@@ -23,9 +23,24 @@ This program will be built on top the Electron framework. With a Chrome headless
  - `timeCalc()` - calculates time of the day so it display AM or PM and isnt in military time.
  - `init()` - creates database for first-time setup
 
-## Flow
+## Flow Chart
 ![alt text](/assets/Diagram2.png?raw=true "Logo Title Text 1")
 
+
+## Used API and Components
+- Font Awesome (Icons)
+- Google Font API (Open Sans)
+- Bootstrap (HTML frame Work)
+- Angular (HTML frame Work)
+- jquery
+- Quill.js by Quill
+  - highlight JS by Quill (for code snippets)
+  - katex CSS (colors for code snippets)
+  - quill-image-drop-module by kensnyder
+  - quill-image-resize-module by kensnyder
+  - jQuery-Suggester by kensnyder
+- CSS toggle switch by Marcus Burnette (I did a lot of editing)
+- Month and Day organiser by w3schools.com
 
 
 
