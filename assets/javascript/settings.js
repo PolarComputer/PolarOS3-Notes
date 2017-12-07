@@ -1,3 +1,4 @@
+// Grabs the info from the settings page
 function updateSettings() {
   console.log("hello");
     var newItem = [ {
@@ -16,6 +17,7 @@ function updateSettings() {
     var objectStoreRequest = objectStore.put(newItem[0]);
 };
 
+// creates all the info for the database
 function setupSettings() {
   console.log("hello");
     var newItem = [ {
@@ -34,6 +36,7 @@ function setupSettings() {
     var objectStoreRequest = objectStore.add(newItem[0]);
 };
 
+// sets the buttons from the databse when the menu is opened
 function setToggleBtn() {
   console.log("hello");
   var transaction = db.transaction(["notes"]);
@@ -67,12 +70,14 @@ function setToggleBtn() {
   };
 }
 
+// reloads the tool bar NO LONGER ACTIVE
 function reloadToolBar() {
   document.querySelectorAll('.ql-toolbar').forEach(function(a) {
     a.remove()
   })
 }
 
+// Reload the editor NO LONGER ACTIVE
 function regenrateToolBar(quillInput) {
   var toolbarOptions = quillInput;
   var quill = new Quill('#editor-container', {

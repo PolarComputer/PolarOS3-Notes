@@ -16,6 +16,7 @@
 
 
   <script>
+  // Sets title of the Page
   function updateTitlePage() {
     document.getElementById('titlePage').innerHTML = document.title;
   }
@@ -221,41 +222,15 @@
     </div>-->
 
     <script type="text/javascript">
-
-
-
-//     var quill = new Quill('#editor-container', {
-//   modules: {
-//     toolbar: [
-//       [{ header: [1, 2, false] }],
-//       ['bold', 'italic', 'underline'],
-//       ['image', 'code-block']
-//     ]
-//   },
-//   placeholder: 'Compose an epic...',
-//   theme: 'snow'  // or 'bubble'
-// });
-
-
-
-//Hover over unexpanded
- // $('.radio').on('mouseover mouseout', 'div[type="radio"]', function(){
- //     $(this).siblings().toggleClass('hover');
- // });
- //
- // .radio div[type='radio'].hover {
- //     opacity: 0.5;
- // }
-
-
-
+    // Updates the message at the bottom of the side bar
     function changeBottomMessage() {
       document.getElementById("bottomMessage1").style.display = 'block';
     }
 
+    // open means full screen
     var expanded = true;
-    //open means full screen
 
+    // Turns on the blur
     function blurOverlay(boolean) {
       if (boolean == true) {
         document.getElementById('bodySystem').className ='blurOverlay';
@@ -269,6 +244,7 @@
       eval(functionCmd);
     })
 
+    // Closes setting Menu
     function settingMenuClose() {
       document.getElementById("settingPageID").style.display = 'none';
       setTimeout(function(){
@@ -277,6 +253,17 @@
       },  50);
     }
 
+    // Opens Setting Menu
+    function settingMenuOpen() {
+      blurOverlay(true);
+      setToggleBtn();
+      //document.getElementById('settingPageID').classList.remove = 'hide';
+      setTimeout(function(){
+        document.getElementById("settingPageID").style.display = 'block';
+      },  50);
+    }
+
+    // Opens Page to make new Note
     function newNote(open) {
       if (open == false) {
         blurOverlay(false);
@@ -288,6 +275,7 @@
       }
     }
 
+    // Open info about page
     function metaTagsMenu(open) {
       if (open == false) {
         blurOverlay(false);
@@ -299,23 +287,13 @@
       }
     }
 
-
-
-    function settingMenuOpen() {
-      blurOverlay(true);
-      setToggleBtn();
-      //document.getElementById('settingPageID').classList.remove = 'hide';
-      setTimeout(function(){
-        document.getElementById("settingPageID").style.display = 'block';
-      },  50);
-    }
-
+    // Closes any open page
     function escAnyMenu() {
       settingMenuClose();
       newNote(false);
     }
 
-
+    // Inversts the expandtion for key commands only
     function updateExpandPosition(){
       if ( expanded == false) {
         expand();
@@ -325,6 +303,7 @@
       console.log(expanded);
     }
 
+    // Open the side bar
     function expand() {
       expanded = false;
       quill.enable(false);
@@ -334,6 +313,20 @@
       document.getElementById('sideBar').className ='showSideBarCSS';
       //img.onclick = unexpandCheck;
       openListNotes();
+      console.log(expanded);
+    }
+
+    // IS FOR OPEN AND CLOSING THE SIDE BAR
+    function unexpand() {
+      quill.enable(true);
+      document.getElementById("editor-container").blur();
+      expanded = true;
+      document.getElementById('sideBar').classList.remove ='showSideBarCSS';
+      document.getElementById('sideBar').className ='hideSideBarCSS';
+      document.getElementById('img').className ='classname2';
+      //document.getElementById('img').classList.remove ='classname2';
+      // document.getElementById('editor-container').className = 'hoverOpacity;';
+      document.getElementById('img').classList.remove ='miniEditor';
       console.log(expanded);
     }
 
@@ -368,7 +361,7 @@
       };
     }
 
-
+    // Check for corupted data
     function checkData(i, callback) {
       console.log(i);
       if (i && i.title) {
@@ -381,6 +374,7 @@
       }
     }
 
+    // Creates the HTML for the Side Bar
     function insertData (i) {
       console.log("Inserting");
       var current = document.getElementById('NotesInsert').innerHTML;
@@ -389,21 +383,7 @@
       //console.log(i);
     }
 
-
-    // IS FOR OPEN AND CLOSING THE SIDE BAR
-    function unexpand() {
-      quill.enable(true);
-      document.getElementById("editor-container").blur();
-      expanded = true;
-      document.getElementById('sideBar').classList.remove ='showSideBarCSS';
-      document.getElementById('sideBar').className ='hideSideBarCSS';
-      document.getElementById('img').className ='classname2';
-      //document.getElementById('img').classList.remove ='classname2';
-      // document.getElementById('editor-container').className = 'hoverOpacity;';
-      document.getElementById('img').classList.remove ='miniEditor';
-      console.log(expanded);
-    }
-
+    // Inverts the expantion of the side bar
     function invertExpand() {
       if (expanded == false) {
         unexpand();
@@ -412,12 +392,14 @@
       }
     }
 
+    // Checks if the side bar is open
     function unexpandCheck() {
       if (expanded == true) {
         unexpand();
       }
     }
 
+    // Makes sure the side bar is closes
     function expandWhenNot() {
       console.log("hello");
       if (expanded == false) {

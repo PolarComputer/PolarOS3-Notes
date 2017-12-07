@@ -26,7 +26,7 @@ icons['blockquote'] = '';
 //icons['color-picker'] = '';
 
 
-
+// Loads editor settings from databse
 function loadEditor() {
   var transaction = db.transaction(["notes"]);
   var objectStore = transaction.objectStore("notes");
@@ -91,7 +91,7 @@ function loadEditor() {
       theme: 'snow'  // or 'bubble'
     });
 
-
+    // Creates the custom buttons
     var toolbar = quill.getModule('toolbar');
       toolbar.addHandler('expand', function() {
         console.log('expand')

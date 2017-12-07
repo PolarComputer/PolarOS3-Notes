@@ -202,6 +202,7 @@ function updateNote() {
   };
 };
 
+// Saves the time in editor
 function setSaveTime(time) {
   console.log(time);
   var dayName = dayWeek(time[6]);
@@ -211,6 +212,7 @@ function setSaveTime(time) {
   document.getElementById('time').innerHTML = inject;
 }
 
+// calcs the time for AM and PM
 function timeCalc(hour,min) {
   if (min <= 9) {
     min = "0" + min;
@@ -223,6 +225,7 @@ function timeCalc(hour,min) {
   }
 }
 
+// Calculates the day of week
 function dayWeek(dayNum) {
   var weekday = new Array();
   weekday[0] =  "Sunday";
@@ -235,6 +238,7 @@ function dayWeek(dayNum) {
   return weekday[dayNum];
 }
 
+// Calculates Month of year
 function monthOfYear(monthNum) {
   var month = new Array();
   month[0] = "January";
@@ -252,7 +256,7 @@ function monthOfYear(monthNum) {
   return month[monthNum];
 }
 
-// Add new Note Enter keyCo
+// Add new Note Enter key on the new Note Page
 document.getElementById('newNoteName').onkeypress = function(e){
     if (!e) e = window.event;
     var keyCode = e.keyCode || e.which;
