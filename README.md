@@ -48,6 +48,11 @@ This program will be built on top the Electron framework. With a Chrome headless
 - Node.js
 - electron-vibrancy by arkenthera (Mac transparenty)
 
+## UI Mockups
+https://www.fluidui.com/editor/live/preview/cF83WENXNUF3clJMWFZDZFQzeXBKY1IzM3NpUFBTUDZmdg==
+![alt text](/assets/UI.png?raw=true "Logo Title Text 1")
+
+
 ## What to take a look at
  - Any files in `assets/javscript`
  - the `index.html` most of the javascript running the UI is located there.
