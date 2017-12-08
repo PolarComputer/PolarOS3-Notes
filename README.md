@@ -1,5 +1,5 @@
 # PolarOS Notes
-This program will be built on top the Electron framework. With a Chrome headless browser and Node to interact with the application and website. Most code will be located on one page to be-able to have a blurred glass look. The program will be a flat clean notes application. It will store the data in the browser database, like a cache.
+This program will be built on top the Electron framework. With a Chrome headless browser and Node to interact with the application and website. Most code will be located on one page to be-able to have a blurred glass look. The program will be a flat clean notes application. It will store the data in the browser database, like a cache. The HTML frame work I am building with be used on futrue projects so it will have to be carefully constructed. There will be a main editor and when you click a button it will open a side bar and make the editor smaller.
 
 ## Function List
  - `expand()` - opens side bar
